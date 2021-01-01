@@ -35,7 +35,7 @@ const Food: React.FC<IProps> = ({
         available: !isAvailable,
       });
 
-      setIsAvailable(!isAvailable);
+      setIsAvailable(!food.available);
     } catch (error) {
       console.log(error);
     }

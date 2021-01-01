@@ -54,7 +54,7 @@ const Dashboard: React.FC = () => {
     food: Omit<IFoodPlate, 'id' | 'available'>,
   ): Promise<void> {
     try {
-      const response = await api.put(`/foods/${editingFood.id}`, {
+      const response = await api.put(`/foods/${editingFood}`, {
         ...editingFood,
         ...food,
       });

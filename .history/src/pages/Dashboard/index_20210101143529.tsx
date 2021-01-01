@@ -54,16 +54,10 @@ const Dashboard: React.FC = () => {
     food: Omit<IFoodPlate, 'id' | 'available'>,
   ): Promise<void> {
     try {
-      const response = await api.put(`/foods/${editingFood.id}`, {
+      const response = await api.put(`/foods/${editingFood}`, {
         ...editingFood,
         ...food,
       });
-
-      setFoods(
-        foods.map(mappedFood =>
-          mappedFood.id === editingFood.id ? { ...response.data } : mappedFood,
-        ),
-      );
     } catch (err) {
       console.log(err);
     }
